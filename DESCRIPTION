@@ -1,0 +1,15 @@
+Package: hellotest
+Type: Package
+Title: writes "Hello" and the name of the person provided
+Version: 0.1.0
+Author: Rick
+Maintainer: Rick <rick.lunkenheimer@gmail.com>
+Description: nothing other than write "Hello," and a name/input
+Depends: R (>= 3.3.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

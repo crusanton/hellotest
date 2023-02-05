@@ -1,0 +1,148 @@
+# install.packages("dplyr")
+# library(dplyr)
+# library(maps)
+# library(graphics)
+# library(magrittr)
+# library(readr)
+# library(tidyr)
+# library(renv)
+# library(devtools)
+# library(testthat)
+# library(usethis)
+# library(knitr)
+# library(roxygen2)
+# Developing R Packages YouTube Video
+## https://www.youtube.com/watch?v=NviTl4UJGt0&list=PLThvbuXxyfhI34y39WFYY__Yay7DZBVxp&index=2
+# "devtools, roxygen2, testthat, knitr"
+devtools::has_devel()
+
+# cd "/Users/crusanton/Documents/GitHub/TestB"
+# cd "/Users/crusanton/Documents/GitHub"
+
+
+VIDEO 1 + 2  (Developing R Packages)
+1) load all the packages
+2) create R project as package
+3) devtools::has_devel()
+4) Terminal: cd "/Users/crusanton/Documents/GitHub/hellotest" or ls - should already be there.
+5) delete "NAMESPACE" - will recreate it when running devtools::document()
+
+VIDEO 3 (Writing code)
+6) create .R for your functions - using "hello.R" for this example
+7) test functions
+
+VIDEO 4 (DESCRIPTION file)
+8) Open DESCRIPTION file - update info as per previous packages, license, depends....leave imports, suggests for later
+
+VIDEO 5 (Documentation)
+9) Roxygen2 comments with #'  - use examples from others
+10) devtools::document()
+11) check man folder for RD files
+12) devtools::load_all()  - may have to run rm(list = c("hello"))  to get rid of warning    - may be unnecessary here
+13) test by using "?hello" to see if documentation is there
+
+VIDEO 6 (NAMESPACE file)
+14)  Add Imports, suggests (none needed for this one)
+15) run devtools::document() again
+16) check for any changes in NAMESPACE
+
+VIDEO 7 (Unit Testing)
+17) usethis::use_testthat()   - used to be devtools::use_test()
+18) check that tests directory and testthat.R was created
+19) create your testing file usethis::use_test("hello")  (must be done this way) - check that it's under "testthat" folder  (name "test_hello.R")
+20) create tests inside testing file using expect_equal function
+
+
+21) devtools::test()
+maybe just run tests   --- this is working??????  but devtools::test() does not find it "No test files found"
+Stuck at VIDEO 7 at 11:28
+
+//////////////////////////////////////////////////////////////////////////////
+> library(testthat)
+> library(hellotest)
+>
+> test_check("hellotest")
+Error in `test_dir()`:
+! No test files found
+Backtrace:
+    ▆
+ 1. └─testthat::test_check("hellotest")
+ 2.   └─testthat::test_dir("testthat", package = package, reporter = reporter, ..., load_package = "installed")
+ 3.     └─rlang::abort("No test files found")
+Execution halted
+
+1 error ✖ | 1 warning ✖ | 2 notes ✖
+
+
+usethis::use_test("hello")  - must create testing file this way!!!!! - error in video because he was using Devtools instead of usethis
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+VIDEO 8 (Build Checks and Releasing)
+22) devtools::check()
+23) GitHub directions below
+
+
+VIDEO 9 (Travis Setup)
+VIDEO 10 (Iterating) - not needed
+VIDEO 11 (Conclusion)
+//////////////////////
+
+
+devtools::check()
+
+BUILDING GIT DEPO in Terminal
+1) git init
+2) git add --all
+3) git commit -m "initial commit"
+4) git status (checking)
+5) git log   (checking)
+6) got to github.com
+7) create new repository in github
+8) copy quick setup -  git@github.com:crusanton/testB.git
+9) git remote add orgin git@github.com:crusanton/testB.git
+10) git remote -v   (checking)
+11) git branch -M main
+12) git push -u origin main
+13) (just in case)
+git config --global user.name "Rick Lunkenheimer"
+git config --global user.email "rick.lunkenheimer@gmail.com"
+14) SSH/RSA key stuff from coursera instructions
+15) git remote add origin git@github.com:crusanton/testB.git
+16) redo #11-12
+17) devtools::use_travis -- !!!  -- usethis::use_travis()
+18) run travis - does it automatically
+19) fix errors if necessary
+20) copy badge link to README.md (don't know where to find this but copy/pasted)
+21) git add --all
+22) git commit -m "added Travis badge in README.md"
+23) git push -u origin main
+24) check for passing badge on Githup in README
+25)
+
+--------
+
+ssh -T -ai ~/.ssh/id_rsa git@github.com
+
+
+git@github.com:crusanton/testB.git
+https://github.com/crusanton/testB.git
+
+hellotest KEY:
+
+////////////////////////////////////
+
+use_travis()
+devtools:test()
+use_this::use_testthat()
+library(testthat)
+library(usethis)
+
+test_check("usethis")
+
+# use_travis()
+# usethis::use_readme_rmd()
+# devtools::build_readme()
