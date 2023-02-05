@@ -100,10 +100,10 @@ BUILDING GIT DEPO in Terminal
 3) git commit -m "initial commit"
 4) git status (checking)
 5) git log   (checking)
-6) got to github.com
+6) go to github.com
 7) create new repository in github
-8) copy quick setup -  git@github.com:crusanton/testB.git
-9) git remote add orgin git@github.com:crusanton/testB.git
+8) copy quick setup -  git@github.com:crusanton/hellotest.git
+9) git remote add origin git@github.com:crusanton/hellotest.git
 10) git remote -v   (checking)
 11) git branch -M main
 12) git push -u origin main
@@ -113,10 +113,27 @@ git config --global user.email "rick.lunkenheimer@gmail.com"
 14) SSH/RSA key stuff from coursera instructions
 15) git remote add origin git@github.com:crusanton/testB.git
 16) redo #11-12
+
+
+usethis::use_readme_rmd()
+
 17) devtools::use_travis -- !!!  -- usethis::use_travis()
+
+<!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.com/crusanton/hellotest.svg?branch=main)](https://travis-ci.com/crusanton/hellotest)
+<!-- badges: end -->
+
+
+
+
 18) run travis - does it automatically
 19) fix errors if necessary
-20) copy badge link to README.md (don't know where to find this but copy/pasted)
+20) copy badge link to README.Rmd (don't know where to find this but copy/pasted)
+
+KNIT RMD to .md
+
 21) git add --all
 22) git commit -m "added Travis badge in README.md"
 23) git push -u origin main
@@ -125,13 +142,9 @@ git config --global user.email "rick.lunkenheimer@gmail.com"
 
 --------
 
-ssh -T -ai ~/.ssh/id_rsa git@github.com
-
-
-git@github.com:crusanton/testB.git
-https://github.com/crusanton/testB.git
 
 hellotest KEY:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCml6TzciD9eXACjj8jFWsXKlM7qF+7RXJQoxd1A/YYFmGvj8fdcIJvh3hlkHV332mYhfUa7P6TSKtVDF1GhHcVSVtdzKfMyNGOP5j6A1t9e/MYbujDjRGjlBwOUtu+4Ii05O0XxI8q38Wuo8qxhmpLfOZId4eaUciIYzkHsVMQA5ii5EkRaCODiWehg3jfC+Bltvcd4e9Yeq5z/oSuruyICK3MVroxr7xpv5//WbcqdmvWf9arwCJBgHTt4DV5X71q7oOAy0FYDdqoEqWYpoKWugOmUfdbVDcjjLUDusk/PZHTu9jZunh2S9IrcxFpjOk31DaElTPf6ijemmucX4Olg+GnoHJIW7HFB2ykNUvgLOR3Uu82pEQp9ymqOV1nlNOtmIw0V7A6muwz3RTijLILF40h09HH6U4di6dJnUb8MsjBMLg8htZXrf2gxxZcH8dDK30GYhq+2EzcgvXOjk6fk+37pqnDDwnj1IzjDJEltdNtf7sHe1wQVhN9E6/n8FG0TTSOBG5rPvqSDVsSBqPA/cYz6GL/fLbvxNpGbmrL+nAzUCA6RFeGfr24TufFKkyrRbldF6o+8VQ41ck+5L9yzfNd2vAphWwhDsZjARkwBIsAEfMLdVNJLPhFMsuDxtggPYdO09bfybS5/qxUgRVGOZUWU7BCHQ0nHlj5c18xVw== crusanton@Ricks-Air.askey.com
 
 ////////////////////////////////////
 
